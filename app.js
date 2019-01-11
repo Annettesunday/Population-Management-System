@@ -1,6 +1,5 @@
 const express = require('express');
 
-
 const app = express();
 
 const port = process.env.PORT || 8000;
@@ -13,4 +12,4 @@ app.get('*', (req,res)=> {
   res.status(400).send({message: 'This action cannot be executed. Got to /api to see all available routes'})
 })
 
-app.listen(port, () => console.log('Yaay. PMS is up!'))
+app.listen(port, () => console.log(`Server started on port ${port}`));
