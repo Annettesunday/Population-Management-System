@@ -45,8 +45,5 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   }, {});
-  Locations.associate = (models) => {
-    Locations.hasMany(models.Locations, { as: 'childLocation', foreignKey: 'parentLocationId' }, { onDelete: 'set null', hooks: true });
-  };
   return Locations;
 };

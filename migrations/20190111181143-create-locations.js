@@ -17,15 +17,6 @@ module.exports = {
       female: {
         type: Sequelize.INTEGER
       },
-      parentLocationId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Locations',
-          key: 'id',
-          as: 'childLocation',
-        },
-        onDelete: 'set null',
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

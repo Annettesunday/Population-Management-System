@@ -1,18 +1,25 @@
-import { Router } from 'express';
-import location from '../controllers/location';
-import * as validation from '../middlewares/validation';
+const express = require ('express');
+const location = require('../controllers/location');
+const validation = require ('../middlewares/validation');
 
-const Route = Router();
+const Route = express.Router();
 
 
-Route.post('/location', validation.validateName, validation.validateMale, validation.validateFemale, validation.validateParentLocation, location.add);
+
+Route.post('/location',
+validation.validateName,
+validation.validateMale,
+validation.validateFemale,
+ location.add);
 
 Route.get('/locations', location.get);
 
 Route.delete('/location/:name', location.delete);
 
-Route.put('/location/:name', validation.validateName, validation.validateMale,
-  validation.validateFemale, validation.validateParentLocation, location.update);
+Route.put('/location/:name', validation.validateName,
+validation.validateMale,
+validation.validateFemale,
+location.update);
 
-export default Route;
+module.exports = Route;
 

@@ -1,4 +1,4 @@
-import db from '../models/index';
+const db = require('../models/index');
 
 const locationFinder = {
   add: (data) => {
@@ -14,4 +14,4 @@ const locationFinder = {
   },
 };
 
-export default locationFinder;
+module.exports = locationFinder;
