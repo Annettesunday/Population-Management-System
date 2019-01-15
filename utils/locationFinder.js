@@ -12,6 +12,9 @@ const locationFinder = {
       },
     });
   },
+  delete: (name) => {
+    return db.Locations.destroy({ where: { name } });
+  },
 };
 
 module.exports = locationFinder;

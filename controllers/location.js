@@ -28,7 +28,19 @@ const location = {
   },
 
   delete: (req, res) => {
-    return res.status(200);
+    const { name } = req.params;
+    locationFinder.delete(name)
+    .then((response) => {
+      if (response === 0) {
+        return res.status(404).send({message: 'Location does not exist'})
+      }
+      else {
+        return res.status(200).send({message: 'Location deleted successfully'})
+      }
+    })
+    .catch((error) => {
+      return res.status(500).send({message: 'Error deleting Location', error})
+    });
   }
 
 }
