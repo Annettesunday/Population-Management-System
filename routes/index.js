@@ -13,6 +13,8 @@ validation.validateFemale,
  location.add);
 
 Route.get('/locations', location.get);
+Route.get('/location/:name', location.get);
+
 
 Route.delete('/location/:name', location.delete);
 

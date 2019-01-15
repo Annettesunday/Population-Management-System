@@ -6,11 +6,7 @@ const locationFinder = {
   },
 
   get: (name) => {
-    return db.Locations.findOne({
-      where: {
-        name,
-      },
-    });
+    return db.Locations.findOne({where: { name} });
   },
   delete: (name) => {
     return db.Locations.destroy({ where: { name } });

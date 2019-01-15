@@ -24,7 +24,17 @@ const location = {
   },
 
   get: (req, res) => {
-    return res.status(200);
+    const { name } = req.params;
+    locationFinder.get(name)
+    .then((response) => {
+      if(response) {
+        return res.status(200).send({response});
+      }
+      return res.status(409).send({message: 'Error retrieving Location', response})
+    })
+    .catch((error) => {
+      return res.status(500).send({error})
+    })
   },
 
   delete: (req, res) => {
