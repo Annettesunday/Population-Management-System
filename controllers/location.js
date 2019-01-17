@@ -10,7 +10,7 @@ const location = {
       if (response[1]){
         return res.status(201).send({message: 'Location created', response});
       }
-      return res.status(409).send({status: 'fail', data: {message: 'Contact already exists'}});
+      return res.status(409).send({status: 'fail', data: {message: 'Location already exists'}});
     })
     .catch((error) => {
       const errorObj = error;
@@ -26,7 +26,7 @@ const location = {
     const oldName = req.params.name;
     const totalPopulation = helpers.getTotalPopulation(male, female);
     locationFinder.update(oldName, { name, male, female, totalPopulation })
-    .then((response) => {
+    .then(([response]) => {
       if (response === 0){
         return res.status(404).send({message: 'Location cannot be found'})
       }
