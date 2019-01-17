@@ -16,9 +16,12 @@ With this you can
 ## Dependencies
 The functionality of this web app being a node.js app depends on the following technologies.
 
-[**Express.js**](https://expressjs.com/): A Fast, opinionated, minimalist web framework for node which was used in routing this application.
+[**Express.js**](https://expressjs.com/): A Fast, opinionated, minimalist web framework for node which was used in routing this application. 
+
 [**BodyParser**](https://babeljs.io/): This module was used to collect search data sent from the client side to the routing page.
-[**Sequelize**](https://www.sequelizejs.com): Sequelize is a promise-based Node.js ORM for Postgres Server which is the database server for the APP . It features solid transaction support, relations, read replication and more.
+
+[**Sequelize**](https://www.sequelizejs.com): Sequelize is a promise-based Node.js ORM for Postgres Server which is the database server for the app. It features solid transaction support, relations, read replication and more.
+
 [**Postgresql**](https://www.postgresql.org/): PostgreSQL is a powerful, open source object-relational database system.
 
 
@@ -36,12 +39,14 @@ The functionality of this web app being a node.js app depends on the following t
 10. The app runs on port 8000
 
 
-## The API.
+## The Population Management System API.
 The API exposes the following endpoints for consumption:
-  1. ```POST``` /location. The API takes the following parameters name, male, female. It creates a location.
-  2. ```GET``` /locations. Retrieves every available location.
-  3.  ```GET``` /location/:name. Retrieves a location with the provided name.
-  4. ```DELETE``` /location/:name. The API takes the following parameters: name. It deletes the location with the provided name.
-  5. ```PUT``` /location/:name. The API takes the following parameters name, male, female. It edits the data of a location with the specified name
+
+
+ 1. ```POST``` /location. The API takes the following parameters name, male, female. It creates a location. 
+ 2. ```GET``` /locations. Retrieves every available location. 
+ 3. ```GET``` /location/:name. Retrieves a location with the provided name. 
+ 4. ```DELETE``` /location/:name. The API takes the following parameters: name. It deletes the location with the provided name. 
+ 5. ```PUT``` /location/:name. The API takes the following parameters name, male, female. It edits the data of a location with the specified name 
 
 
