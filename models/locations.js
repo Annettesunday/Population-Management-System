@@ -44,6 +44,20 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    totalPopulation: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Total population number cannot be empty',
+        },
+        isInt: {
+          args: true,
+          msg: 'Please input a valid number'
+        },
+      },
+    },
   }, {});
   return Locations;
 };

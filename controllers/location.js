@@ -1,9 +1,11 @@
 const locationFinder = require('../utils/locationFinder');
+const helpers = require('../helpers/helpers');
 
 const location = {
   add: (req, res) => {
     const { name, male, female } = req.body;
-    locationFinder.add({name, male, female })
+    const totalPopulation = helpers.getTotalPopulation(male, female);
+    locationFinder.add({name, male, female, totalPopulation })
     .then((response) => {
       if (response[1]){
         return res.status(201).send({message: 'Location created', response});
@@ -22,7 +24,8 @@ const location = {
   update: (req, res) => {
     const { name, male, female } = req.body;
     const oldName = req.params.name;
-    locationFinder.update(oldName, { name, male, female })
+    const totalPopulation = helpers.getTotalPopulation(male, female);
+    locationFinder.update(oldName, { name, male, female, totalPopulation })
     .then((response) => {
       if (response === 0){
         return res.status(404).send({message: 'Location cannot be found'})
