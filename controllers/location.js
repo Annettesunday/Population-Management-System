@@ -8,7 +8,7 @@ const location = {
     locationFinder.add({name, male, female, totalPopulation })
     .then((response) => {
       if (response[1]){
-        return res.status(201).send({message: 'Location created', response});
+        return res.status(201).send({message: 'Location created successfully', response});
       }
       return res.status(409).send({status: 'fail', data: {message: 'Location already exists'}});
     })

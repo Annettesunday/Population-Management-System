@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "mocha --reporter progress tests/*.spec.js --exit"
+    "test": " mocha --reporter progress tests/*.spec.js --exit"
+
   },
   "author": "Annette Sunday",
   "license": "ISC",
