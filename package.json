@@ -4,9 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "migration": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": " mocha --reporter progress tests/*.spec.js --exit"
+    "test": "sequelize db:seed:undo:all && mocha --reporter progress tests/*.spec.js --exit"
 
   },
   "author": "Annette Sunday",
