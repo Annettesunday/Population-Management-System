@@ -20,7 +20,22 @@ const location = {
   },
 
   update: (req, res) => {
-    return res.status(200);
+    const { name, male, female } = req.body;
+    const oldName = req.params.name;
+    locationFinder.update(oldName, { name, male, female })
+    .then((response) => {
+      if (response === 0){
+        return res.status(404).send({message: 'Location cannot be found'})
+      }
+      return res.status(200).send({message: 'Location updated successfully'})
+    })
+    .catch((error) => {
+      const errorObj = error;
+      if (errorObj.message === 'name must be unique') {
+        return res.status(409).send({message: 'Location name must be unique'})
+      }
+      res.status(500).send({message: 'Error updating location'})
+    })
   },
 
   get: (req, res) => {

@@ -14,6 +14,9 @@ const locationFinder = {
   findAll: () => {
     return db.Locations.findAll();
   },
+  update: (name, data) =>{
+    return db.Locations.update(data, { where: { name }});
+  }
 };
 
 module.exports = locationFinder;
