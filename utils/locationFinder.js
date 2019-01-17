@@ -11,6 +11,9 @@ const locationFinder = {
   delete: (name) => {
     return db.Locations.destroy({ where: { name } });
   },
+  findAll: () => {
+    return db.Locations.findAll();
+  },
 };
 
 module.exports = locationFinder;

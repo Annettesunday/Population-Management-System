@@ -12,7 +12,7 @@ validation.validateMale,
 validation.validateFemale,
  location.add);
 
-Route.get('/locations', location.get);
+Route.get('/locations', location.findAll);
 Route.get('/location/:name', location.get);
 
 

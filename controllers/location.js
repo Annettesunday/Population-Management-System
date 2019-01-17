@@ -36,6 +36,18 @@ const location = {
       return res.status(500).send({error})
     })
   },
+  findAll: (req,res) => {
+    locationFinder.findAll()
+    .then((response) => {
+      if (response){
+        return res.status(200).send({response});
+      }
+      return res.status(409).send({message: 'Error getting all locations', response})
+    })
+    .catch((error) => {
+      return res.status(500).send({error})
+    })
+  },
 
   delete: (req, res) => {
     const { name } = req.params;
