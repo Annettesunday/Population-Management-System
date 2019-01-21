@@ -50,6 +50,21 @@ The API exposes the following endpoints for consumption:
  4. ```DELETE``` /location/:name. The API takes the following parameters: name. It deletes the location with the provided name. 
  5. ```PUT``` /location/:name. The API takes the following parameters name, male, female. It edits the data of a location with the specified name 
 
+
+ Summary
+
+|URL Endpoint| HTTP Methods | Summary |
+| -------- | ------------- | --------- |
+| `/location` | `POST`  | Creates a new location |
+|  `/locations` | `GET` | Retrieves every available location |
+| `/location/:name` | `GET` | Retrieves a specified location |
+| `/location/:name` | `DELETE` | Deletes a specified location |
+| `/location/:name` | `PUT` | Updates a specified location |
+
+
+
+
+
 ## Test  
 Tests are written with ``` Mocha ``` and ``` supertest ```.
 
