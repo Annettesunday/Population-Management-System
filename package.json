@@ -7,8 +7,7 @@
     "migration": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "NODE_ENV=test && sequelize db:seed:undo:all && mocha --reporter progress tests/*.spec.js --exit"
-
+    "test": "NODE_ENV=test && sequelize db:seed:undo:all && nyc mocha --reporter progress tests/*.spec.js --exit"
   },
   "author": "Annette Sunday",
   "license": "ISC",
@@ -20,6 +19,7 @@
     "express": "^4.16.4",
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
+    "nyc": "^13.1.0",
     "pg": "^7.8.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0",
