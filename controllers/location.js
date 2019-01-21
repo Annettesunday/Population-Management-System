@@ -19,8 +19,7 @@ const location = {
         });
       })
       .catch(error => {
-        const errorMessage = error.errors.map(value => value.message);
-          return res.status(400).send(errorMessage);
+          return res.status(400).send({ error });
       });
   },
 
@@ -40,8 +39,7 @@ const location = {
           .send({ message: "Location updated successfully" });
       })
       .catch(error => {
-        const errorMessage = error.errors.map(value => value.message);
-          return res.status(400).send(errorMessage);
+        return res.status(500).send({ error })
       });
   },
 
@@ -53,7 +51,7 @@ const location = {
         if (response) {
           return res.status(200).send({ response });
         }
-        return res.status(409).send({ message: "Location does not exist" });
+        return res.status(404).send({ message: "Location does not exist" });
       })
       .catch(error => {
         return res.status(500).send({ error });
@@ -66,9 +64,6 @@ const location = {
         if (response) {
           return res.status(200).send({ response });
         }
-        return res
-          .status(409)
-          .send({ message: "Error getting all locations", response });
       })
       .catch(error => {
         return res.status(500).send({ error });

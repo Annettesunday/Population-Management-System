@@ -9,6 +9,9 @@
     "dev": "nodemon app.js",
     "test": "NODE_ENV=test && sequelize db:seed:undo:all && nyc mocha --reporter progress tests/*.spec.js --exit"
   },
+  "nyc": {
+    "exclude": "**/*.spec.js"
+  },
   "author": "Annette Sunday",
   "license": "ISC",
   "dependencies": {

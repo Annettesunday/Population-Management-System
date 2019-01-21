@@ -105,7 +105,18 @@ describe("Test location functionality", () => {
         done();
       });
   });
-  it("should not update location with invalid name", done => {
+  it("should not get an unavailable location", done =>{
+    api
+      .get("/location/unavailable")
+      .set("Content-Type","application/json")
+      .end((error, res) => {
+        expect(res.status).to.equal(404);
+        expect(JSON.parse(res.text).message).to.equal("Location does not exist")
+        if (error) return expect(error.message)
+        done();
+      })
+  })
+  it("should not update location with unavailable name", done => {
     api
       .put("/location/dummy2")
       .send(validLocationDetails)
@@ -142,6 +153,16 @@ describe("Test location functionality", () => {
         expect(JSON.parse(res.text).message).to.equal(
           "Location deleted successfully"
         );
+        if (error) return expect(error.message);
+        done();
+      });
+  });
+  it("should not delete an unvailable location", done => {
+    api
+      .delete("/location/Uganda")
+      .set("Content-Type", "application/json")
+      .end((error, res) => {
+        expect(JSON.parse(res.text).message).to.equal("Location does not exist");
         if (error) return expect(error.message);
         done();
       });
