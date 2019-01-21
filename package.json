@@ -7,7 +7,7 @@
     "migration": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "NODE_ENV=test && sequelize db:seed:undo:all && nyc mocha --reporter progress tests/*.spec.js --exit"
+    "test": "export NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && nyc mocha --reporter progress tests/*.spec.js --exit"
   },
   "nyc": {
     "exclude": "**/*.spec.js"
