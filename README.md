@@ -49,4 +49,24 @@ The API exposes the following endpoints for consumption:
  4. ```DELETE``` /location/:name. The API takes the following parameters: name. It deletes the location with the provided name. 
  5. ```PUT``` /location/:name. The API takes the following parameters name, male, female. It edits the data of a location with the specified name 
 
+## Test  
+Tests are written with ``` Mocha ``` and ``` supertest ```.
+
+
+ #### Contributing
+---
+
+1. Fork this repository to your account.
+2. Clone your repository: git clone https://github.com/Annettesunday/Population-Management-System.git.
+3. Commit your changes: git commit -m "did something".
+4. Push to the remote branch: git push origin new-feature.
+5. Open a pull request against develop branch
+
+#### Licence
+---
+
+ISC
+
+Copyright (c) 2019 Annette Sunday
+
 
