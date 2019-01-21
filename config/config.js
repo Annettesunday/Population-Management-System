@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 
 dotenv.config();
 
@@ -14,23 +14,23 @@ const config = {
     username: devUsername,
     password: devPassword,
     database: devDatabase,
-    host: '127.0.0.1',
-    dialect: 'postgres',
+    host: "127.0.0.1",
+    dialect: "postgres"
   },
   test: {
     username: testUsername,
     password: testPassword,
     database: testDatabase,
-    host: '127.0.0.1',
-    dialect: 'postgres',
+    host: "127.0.0.1",
+    dialect: "postgres"
   },
   production: {
-    username: 'root',
+    username: "root",
     password: null,
-    database: 'database_production',
-    host: '127.0.0.1',
-    dialect: 'postgres',
-  },
+    database: "database_production",
+    host: "127.0.0.1",
+    dialect: "postgres"
+  }
 };
 
 module.exports = config;

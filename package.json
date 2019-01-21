@@ -7,7 +7,7 @@
     "migration": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "sequelize db:seed:undo:all && mocha --reporter progress tests/*.spec.js --exit"
+    "test": "NODE_ENV=test && sequelize db:seed:undo:all && mocha --reporter progress tests/*.spec.js --exit"
 
   },
   "author": "Annette Sunday",

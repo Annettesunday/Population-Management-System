@@ -33,7 +33,7 @@ validateFemale: (req,res, next) => {
       .send({
         status: 'fail',
         data: {
-          message: 'Invalid female count. Female count must be greater or equal to zero'
+          message: 'Invalid female count. Female count must be greater or equal to zero and must be an integer'
         }
       });
   }
@@ -48,7 +48,7 @@ validateMale: (req,res,next) => {
       .send({
         status: 'fail',
         data: {
-          message: 'Invalid male count. Male count must be greater or equal to zero'
+          message: 'Invalid male count. Male count must be greater or equal to zero and must be an integer'
         }
       });
   }
