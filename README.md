@@ -36,7 +36,8 @@ The functionality of this web app being a node.js app depends on the following t
 7. ``` npm install ``` to install all dependencies.
 8. ``` npm run dev ``` to start the app in development mode.
 9. ``` npm start ``` starts the app.
-10. The app runs on port 8000
+10. ``` npm test ``` runs all the tests.
+11. The app runs on port 8000
 
 
 ## The Population Management System API.
