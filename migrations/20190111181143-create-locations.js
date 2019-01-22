@@ -9,17 +9,63 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: {
+          args: true,
+          msg: 'Location already exists'
+        },
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Name cannot be empty',
+          },
+        },
       },
       male: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Male population number cannot be empty',
+          },
+          isInt: {
+            args: true,
+            msg: 'Please input a valid number',
+          },
+        },
       },
       female: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+        validate: {
+          notEmpty: {
+          args: true,
+          msg: 'Female population number cannot be empty',
+        },
+          isInt: {
+            args: true,
+            msg: 'Please input a valid number',
+          },
+        },
       },
       totalPopulation: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        defaultValue: 0,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Total population number cannot be empty',
+          },
+          isInt: {
+            args: true,
+            msg: 'Please input a valid number'
+          },
+        },
       },
       createdAt: {
         allowNull: false,
