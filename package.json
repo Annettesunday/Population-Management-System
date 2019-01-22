@@ -10,7 +10,12 @@
     "test": "export NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && nyc mocha --reporter progress tests/*.spec.js --exit"
   },
   "nyc": {
-    "exclude": "**/*.spec.js"
+    "check-coverage": true,
+    "exclude": "**/*.spec.js",
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
   },
   "author": "Annette Sunday",
   "license": "ISC",
