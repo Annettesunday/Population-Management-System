@@ -5,8 +5,8 @@ const locationFinder = {
     return db.Locations.findOrCreate({ where: data });
   },
 
-  get: (name) => {
-    return db.Locations.findOne({where: { name} });
+  get: (id) => {
+    return db.Locations.findById(id,{where:  id });
   },
   delete: (name) => {
     return db.Locations.destroy({ where: { name } });
@@ -14,8 +14,8 @@ const locationFinder = {
   findAll: () => {
     return db.Locations.findAll();
   },
-  update: (name, data) =>{
-    return db.Locations.update(data, { where: { name }});
+  update: (id, data) =>{
+    return db.Locations.update(data, { where: { id }});
   }
 };
 

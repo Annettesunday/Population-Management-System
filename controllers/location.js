@@ -25,12 +25,12 @@ const location = {
 
   update: (req, res) => {
     const { name, male, female } = req.body;
-    const oldName = req.params.name;
+    const { id } = req.params;
     const totalPopulation = helpers.getTotalPopulation(male, female);
     locationFinder
-      .update(oldName, { name, male, female, totalPopulation })
+      .update(id, { name, male, female, totalPopulation })
       .then(([response]) => {
-        if (response ===  0 && req.body.name !== req.params.name) {
+        if (response ===  0 && req.body.id !== req.params.id) {
           return res.status(404).send({ message: "Location cannot be found" });
         }
 
@@ -44,9 +44,9 @@ const location = {
   },
 
   get: (req, res) => {
-    const { name } = req.params;
+    const { id }   = req.params;
     locationFinder
-      .get(name)
+      .get(id)
       .then(response => {
         if (response) {
           return res.status(200).send({ response });

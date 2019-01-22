@@ -13,12 +13,12 @@ Route.post(
 );
 
 Route.get("/locations", location.findAll);
-Route.get("/location/:name", location.get);
+Route.get("/location/:id", location.get);
 
 Route.delete("/location/:name", location.delete);
 
 Route.put(
-  "/location/:name",
+  "/location/:id",
   validation.validateName,
   validation.validateMale,
   validation.validateFemale,

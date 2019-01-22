@@ -96,7 +96,7 @@ describe("Test location functionality", () => {
   it("should get a single location", done => {
     api.post(validLocationDetails);
     api
-      .get("/location/dummy")
+      .get("/location/1")
       .set("Content-Type", "application/json")
       .end((error, res) => {
         expect(res.status).to.equal(200);
@@ -107,7 +107,7 @@ describe("Test location functionality", () => {
   });
   it("should not get an unavailable location", done =>{
     api
-      .get("/location/unavailable")
+      .get("/location/70")
       .set("Content-Type","application/json")
       .end((error, res) => {
         expect(res.status).to.equal(404);
@@ -116,9 +116,9 @@ describe("Test location functionality", () => {
         done();
       })
   })
-  it("should not update location with unavailable name", done => {
+  it("should not update location with invalid id", done => {
     api
-      .put("/location/dummy2")
+      .put("/location/6009")
       .send(validLocationDetails)
       .set("Content-Type", "application/json")
       .end((error, res) => {
@@ -132,7 +132,7 @@ describe("Test location functionality", () => {
   });
   it("should update a specified location successfully", done => {
     api
-      .put("/location/dummy")
+      .put("/location/1")
       .send(locationTest)
       .set("Content-Type", "application/json")
 
