@@ -7,7 +7,8 @@
     "migration": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "export NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && nyc mocha --reporter progress tests/*.spec.js --exit"
+    "test": "export NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && nyc mocha progress tests/*.spec.js --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "check-coverage": true,
@@ -22,6 +23,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "dotenv": "^6.2.0",
     "eslint": "^5.12.0",
     "express": "^4.16.4",
