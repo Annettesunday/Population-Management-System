@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: {
           args: true,
-          msg: 'Location already exits'
+          msg: 'Location already exists'
       },
       validate: {
         notEmpty: {
