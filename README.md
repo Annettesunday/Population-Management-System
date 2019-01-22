@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/Annettesunday/Population-Management-System.svg?style=svg)](https://circleci.com/gh/Annettesunday/Population-Management-System)
+[![Coverage Status](https://coveralls.io/repos/github/Annettesunday/Population-Management-System/badge.svg?branch=develop)](https://coveralls.io/github/Annettesunday/Population-Management-System?branch=develop)
+
+
 # Population Management System
 ```Population Managent System``` is a simple API that allows Users to store up population details of unique locations and return the total population of the location when requested for. The API allows for a one level deep nesting of locations.
 
