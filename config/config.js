@@ -8,10 +8,10 @@ const devDatabase = process.env.DEV_DB_NAME;
 const testUsername = process.env.TEST_DB_USERNAME;
 const testPassword = process.env.TEST_DB_PASSWORD;
 const testDatabase = process.env.TEST_DB_NAME;
-const productionUsername = process.env.PRODUCTION_USERNAME;
-const productionPassword = process.env.PRODUCTION_PASSWORD;
-const productionDatabase = process.env.PRODUCTION_DB_NAME;
-const productionHost = process.env.PRODUCTION_HOST;
+const productionUsername = process.env.User;
+const productionPassword = process.env.Password;
+const productionDatabase = process.env.Database;
+const productionHost = process.env.Host;
 
 const config = {
   development: {
