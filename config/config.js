@@ -8,6 +8,10 @@ const devDatabase = process.env.DEV_DB_NAME;
 const testUsername = process.env.TEST_DB_USERNAME;
 const testPassword = process.env.TEST_DB_PASSWORD;
 const testDatabase = process.env.TEST_DB_NAME;
+const productionUsername = process.env.PRODUCTION_USERNAME;
+const productionPassword = process.env.PRODUCTION_PASSWORD;
+const productionDatabase = process.env.PRODUCTION_DB_NAME;
+const productionHost = process.env.PRODUCTION_HOST;
 
 const config = {
   development: {
@@ -25,10 +29,10 @@ const config = {
     dialect: "postgres"
   },
   production: {
-    username: "root",
-    password: null,
-    database: "database_production",
-    host: "127.0.0.1",
+    username: productionUsername,
+    password: productionPassword,
+    database: productionDatabase,
+    host: productionHost,
     dialect: "postgres"
   }
 };
