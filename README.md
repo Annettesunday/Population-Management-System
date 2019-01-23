@@ -3,7 +3,7 @@
 
 
 # Population Management System
-```Population Managent System``` is a simple API that allows Users to store up population details of unique locations and return the total population of the location when requested for. The API allows for a one level deep nesting of locations.
+```Population Managent System``` is a simple API that allows Users to store up population details of unique locations and return the total population of the location when requested for.
 
 
 ## What does it do
@@ -56,6 +56,7 @@ The API exposes the following endpoints for consumption:
 
 
  Summary
+The API has been hosted [here](https://population-managementsystem.herokuapp.com/)
 
 |URL Endpoint| HTTP Methods | Summary |
 | -------- | ------------- | --------- |
